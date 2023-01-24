@@ -1,10 +1,17 @@
 import React from 'react';
+import {Navigate, Routes, Route } from 'react-router-dom';
 import Main from './views/Main';
+import Detail from './views/Detail';
 function App() {
   return (
     <div className="App">
-      <Main />
+      <Routes>
+        <Route path='/' element={<Navigate to='/products' />} />
+        <Route element={<Main />} path="/products" />
+        <Route element={<Detail />} path="/products/:id" />
+      </Routes>
     </div>
   );
 }
 export default App;
+
