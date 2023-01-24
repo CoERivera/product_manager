@@ -21,19 +21,19 @@ export default () => {
     //onChange to update firstName and lastName
     return (
         <form onSubmit={onSubmitHandler}>
-            <p>
-                <label>Title</label><br />
-                <input type="text" onChange={(e) => setTitle(e.target.value)} value={title} />
+            <p className='form-group'>
+                <label class="font-weight-bold">Title</label><br />
+                <input className='form-control' type="text" onChange={(e) => setTitle(e.target.value)} value={title} />
             </p>
-            <p>
-                <label>Price</label><br />
-                <input type="number" min="1" step=".01" onChange={(e) => setPrice(e.target.value)} value={price} />
+            <p className='form-group'>
+                <label class="font-weight-bold">Price</label><br />
+                <input className='form-control' type="number" min="1" step=".01" onChange={(e) => setPrice(e.target.value)} value={price} />
             </p>
-            <p>
-                <label>Descriptiption</label><br />
-                <textarea rows="4" cols="50" style={{ resize: "none" }}onChange={(e) => setDescription(e.target.value)} value={description} />
+            <p className='form-group'>
+                <label class="font-weight-bold">Description</label><br />
+                <textarea className='form-control' rows="4" style={{ resize: "none" }}onChange={(e) => setDescription(e.target.value)} value={description} />
             </p>
-            <input type="submit" />
+            <span className='d-flex justify-content-end mt-5'><button className='btn btn-primary' type="submit">Create Product</button></span>
         </form>
     )
 }
