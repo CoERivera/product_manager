@@ -1,10 +1,14 @@
 import React, { useState } from 'react'
 import axios from 'axios';
-export default () => {
+import { useNavigate } from 'react-router-dom';
+
+
+const ProductForm = () => {
     //keep track of what is being typed via useState hook
     const [title, setTitle] = useState("");
     const [price, setPrice] = useState(0);
     const [description, setDescription] = useState("");
+    const navigate = useNavigate();
     //handler when the form is submitted
     const onSubmitHandler = e => {
         //prevent default behavior of the submit
@@ -15,7 +19,9 @@ export default () => {
             price,
             description
         })
-            .then(res => console.log(res))
+            .then(res => {
+                navigate('/');
+            })
             .catch(err => console.log(err))
     }
     //onChange to update firstName and lastName
@@ -37,4 +43,6 @@ export default () => {
         </form>
     )
 }
+
+export default ProductForm;
 

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios';
-import { Navigate, useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 const Update = (props) => {
     const { id } = useParams();
@@ -26,7 +26,6 @@ const Update = (props) => {
             description
         })
             .then(res => {
-                console.log(res);
                 navigate('/products');
             })
             .catch(err => console.error(err));
