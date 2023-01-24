@@ -22,15 +22,15 @@ export default () => {
     return (
         <form onSubmit={onSubmitHandler}>
             <p className='form-group'>
-                <label class="font-weight-bold">Title</label><br />
+                <label className="font-weight-bold">Title</label><br />
                 <input className='form-control' type="text" onChange={(e) => setTitle(e.target.value)} value={title} />
             </p>
             <p className='form-group'>
-                <label class="font-weight-bold">Price</label><br />
+                <label className="font-weight-bold">Price</label><br />
                 <input className='form-control' type="number" min="1" step=".01" onChange={(e) => setPrice(e.target.value)} value={price} />
             </p>
             <p className='form-group'>
-                <label class="font-weight-bold">Description</label><br />
+                <label className="font-weight-bold">Description</label><br />
                 <textarea className='form-control' rows="4" style={{ resize: "none" }}onChange={(e) => setDescription(e.target.value)} value={description} />
             </p>
             <span className='d-flex justify-content-end mt-5'><button className='btn btn-primary' type="submit">Create Product</button></span>
